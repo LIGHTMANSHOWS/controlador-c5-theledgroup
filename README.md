@@ -15,6 +15,8 @@ El puente definitivo es `dist\C5SenderManagerApp.exe`. Recibe Art-Net desde xLig
 
 El show definitivo de xLights está en `TLG\`: incluye el layout de los 11 trajes, las 78 redes Art-Net, la secuencia y los exports `.xmodel`. Usa el puente en modo automático, sin `patch_map`, para conservar este direccionamiento fijo.
 
+Para crear shows nuevos desde una canción sin alterar esta infraestructura, usa el [contrato de creación para Traffic LED](docs/traffic-led-show-authoring.md).
+
 ## Decision de salida LED
 
 En ESP32-C5 no conviene usar I2S para las WS281x. El C5 tiene I2S, pero para seis lineas sincronizadas el periferico correcto es PARLIO TX con GDMA:
