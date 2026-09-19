@@ -1,0 +1,8 @@
+{
+  "current_limit_a": 2.5,
+  "brightness_mode": "max_brightness",
+  "max_brightness_value": 62,
+  "brightness_gamma": 1.6,
+  "temporal_dither": false,
+  "c5_source_ip": "auto"
+}

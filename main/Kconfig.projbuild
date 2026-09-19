@@ -1,0 +1,100 @@
+menu "C5 ESP32-C5 6x200"
+    config LED_FLAG_WIFI_SSID
+        string "Wi-Fi SSID"
+        default "REDPIXEL_5G"
+    config LED_FLAG_WIFI_PASSWORD
+        string "Wi-Fi password"
+        default "wled1234"
+    config LED_FLAG_MATRIX_ID
+        int "Controller ID (0 accepts all legacy IDs)"
+        range 0 255
+        default 1
+    config LED_FLAG_WIFI_STATIC_IP
+        bool "Use static Wi-Fi IP"
+        default y
+    config LED_FLAG_WIFI_IP_ADDR
+        string "Static IP address"
+        default "192.168.1.201"
+    config LED_FLAG_WIFI_GATEWAY
+        string "Static gateway"
+        default "192.168.1.1"
+    config LED_FLAG_WIFI_NETMASK
+        string "Static netmask"
+        default "255.255.255.0"
+    config LED_FLAG_WIFI_FAST_CONNECT
+        bool "Fast Wi-Fi connect"
+        default y
+    config LED_FLAG_WIFI_5G_ONLY
+        bool "Force Wi-Fi 5 GHz"
+        default n
+    config LED_FLAG_WIFI_CHANNEL
+        int "Preferred 2.4 GHz Wi-Fi channel (0 scans)"
+        range 0 14
+        default 0
+    config LED_FLAG_WIFI_BSSID
+        string "Preferred Wi-Fi BSSID"
+        default ""
+    config LED_FLAG_WIFI_CONNECT_RETRY_MS
+        int "Fast connect retry timeout ms"
+        range 300 5000
+        default 1500
+    config LED_FLAG_WIFI_MIN_RSSI
+        int "Minimum Wi-Fi RSSI"
+        range -127 0
+        default -95
+
+    choice LED_FLAG_COLOR_ORDER
+        prompt "Physical LED color order"
+        default LED_FLAG_COLOR_ORDER_GRB
+        config LED_FLAG_COLOR_ORDER_GRB
+            bool "GRB"
+        config LED_FLAG_COLOR_ORDER_RGB
+            bool "RGB"
+        config LED_FLAG_COLOR_ORDER_BRG
+            bool "BRG"
+        config LED_FLAG_COLOR_ORDER_BGR
+            bool "BGR"
+    endchoice
+
+    config LED_FLAG_SD_MOUNT_POINT
+        string "microSD mount point"
+        default "/sdcard"
+    config LED_FLAG_SD_DEFAULT_FILE
+        string "Default recorded show"
+        default "/sdcard/rec1.lfs"
+    config LED_FLAG_SD_RECORD_FPS
+        int "Record/playback FPS"
+        range 1 60
+        default 30
+    config LED_FLAG_SD_RECORD_QUEUE_LEN
+        int "Non-blocking SD record queue frames"
+        range 2 12
+        default 6
+
+    config LED_FLAG_OFFLINE_ANIMATION
+        bool "Show saved fallback when LIVE stops"
+        default n
+    config LED_FLAG_OFFLINE_TIMEOUT_MS
+        int "Fallback timeout ms"
+        range 100 10000
+        default 1000
+    config LED_FLAG_OFFLINE_FPS
+        int "Fallback FPS"
+        range 1 60
+        default 15
+
+    config LED_FLAG_RENTAL_BUTTON_GPIO
+        int "Rental button GPIO (-1 disabled)"
+        default -1
+    config LED_FLAG_RENTAL_DEFAULT_FILE
+        string "Rental default show"
+        default "/sdcard/rec1.lfs"
+    config LED_FLAG_RENTAL_BUTTON_LONG_MS
+        int "Rental button long press ms"
+        range 500 5000
+        default 2000
+    config LED_FLAG_RENTAL_BUTTON_STOP_MS
+        int "Rental button stop press ms"
+        range 3000 15000
+        default 6000
+endmenu

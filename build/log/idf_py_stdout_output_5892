@@ -1,0 +1,108 @@
+Command: ninja all
+[1/16] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/bootloader/bootloader.bin""
+Bootloader binary size 0x5670 bytes. 0x990 bytes (10%) free.
+[2/16] No install step for 'bootloader'
+[3/16] Completed 'bootloader'
+[4/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/frame_buffer.c.obj
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/spi_link_protocol.h:5,
+                 from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/spi_master_link.h:7,
+                 from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/frame_buffer.c:11:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:6:9: warning: "LED_FLAG_WIDTH" redefined
+    6 | #define LED_FLAG_WIDTH                 200
+      |         ^~~~~~~~~~~~~~
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/frame_buffer.c:10:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:8:9: note: this is the location of the previous definition
+    8 | #define LED_FLAG_WIDTH                 LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:10:9: warning: "LED_FLAG_LEDS_PER_OUTPUT" redefined
+   10 | #define LED_FLAG_LEDS_PER_OUTPUT       200
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:12:9: note: this is the location of the previous definition
+   12 | #define LED_FLAG_LEDS_PER_OUTPUT       LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:11:9: warning: "LED_FLAG_TOTAL_LEDS" redefined
+   11 | #define LED_FLAG_TOTAL_LEDS            1200
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:14:9: note: this is the location of the previous definition
+   14 | #define LED_FLAG_TOTAL_LEDS            (LED_FLAG_MAX_PIXELS_PER_OUTPUT * LED_FLAG_OUTPUT_COUNT)
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:13:9: warning: "LED_FLAG_FRAME_SIZE_BYTES" redefined
+   13 | #define LED_FLAG_FRAME_SIZE_BYTES      2400
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:17:9: note: this is the location of the previous definition
+   17 | #define LED_FLAG_FRAME_SIZE_BYTES      (LED_FLAG_TOTAL_LEDS * LED_FLAG_BYTES_PER_PIXEL)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+[5/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/runtime_config.c.obj
+[6/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/udp.c.obj
+[7/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/runtime_config.h:7,
+                 from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/main.c:18:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:8:9: warning: "LED_FLAG_WIDTH" redefined
+    8 | #define LED_FLAG_WIDTH                 LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/main.c:15:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:6:9: note: this is the location of the previous definition
+    6 | #define LED_FLAG_WIDTH                 200
+      |         ^~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:12:9: warning: "LED_FLAG_LEDS_PER_OUTPUT" redefined
+   12 | #define LED_FLAG_LEDS_PER_OUTPUT       LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:10:9: note: this is the location of the previous definition
+   10 | #define LED_FLAG_LEDS_PER_OUTPUT       200
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:14:9: warning: "LED_FLAG_TOTAL_LEDS" redefined
+   14 | #define LED_FLAG_TOTAL_LEDS            (LED_FLAG_MAX_PIXELS_PER_OUTPUT * LED_FLAG_OUTPUT_COUNT)
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:11:9: note: this is the location of the previous definition
+   11 | #define LED_FLAG_TOTAL_LEDS            1200
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:17:9: warning: "LED_FLAG_FRAME_SIZE_BYTES" redefined
+   17 | #define LED_FLAG_FRAME_SIZE_BYTES      (LED_FLAG_TOTAL_LEDS * LED_FLAG_BYTES_PER_PIXEL)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:13:9: note: this is the location of the previous definition
+   13 | #define LED_FLAG_FRAME_SIZE_BYTES      2400
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+[8/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/sd_storage.c.obj
+[9/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ota_http.c.obj
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/spi_link_protocol.h:5,
+                 from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/ota_http.c:22:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:6:9: warning: "LED_FLAG_WIDTH" redefined
+    6 | #define LED_FLAG_WIDTH                 200
+      |         ^~~~~~~~~~~~~~
+In file included from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/runtime_config.h:7,
+                 from C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/ota_http.c:21:
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:8:9: note: this is the location of the previous definition
+    8 | #define LED_FLAG_WIDTH                 LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:10:9: warning: "LED_FLAG_LEDS_PER_OUTPUT" redefined
+   10 | #define LED_FLAG_LEDS_PER_OUTPUT       200
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:12:9: note: this is the location of the previous definition
+   12 | #define LED_FLAG_LEDS_PER_OUTPUT       LED_FLAG_MAX_PIXELS_PER_OUTPUT
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:11:9: warning: "LED_FLAG_TOTAL_LEDS" redefined
+   11 | #define LED_FLAG_TOTAL_LEDS            1200
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:14:9: note: this is the location of the previous definition
+   14 | #define LED_FLAG_TOTAL_LEDS            (LED_FLAG_MAX_PIXELS_PER_OUTPUT * LED_FLAG_OUTPUT_COUNT)
+      |         ^~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/common/led_flag_common.h:13:9: warning: "LED_FLAG_FRAME_SIZE_BYTES" redefined
+   13 | #define LED_FLAG_FRAME_SIZE_BYTES      2400
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/protocol.h:17:9: note: this is the location of the previous definition
+   17 | #define LED_FLAG_FRAME_SIZE_BYTES      (LED_FLAG_TOTAL_LEDS * LED_FLAG_BYTES_PER_PIXEL)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+[10/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi.c.obj
+[11/16] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/leds.c.obj
+[12/16] Linking C static library esp-idf\main\libmain.a
+[13/16] Generating esp-idf/esp_system/ld/sections.ld
+[14/16] Linking CXX executable c5_esp32c5_rgb555_6x200.elf
+[15/16] Generating binary image from built executable
+esptool.py v4.12.dev2
+Creating esp32c5 image...
+Merged 1 ELF section
+Successfully created esp32c5 image.
+Generated C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin
+[16/16] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/partition_table/partition-table.bin" "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin""
+c5_esp32c5_rgb555_6x200.bin binary size 0xfb170 bytes. Smallest app partition is 0x1e0000 bytes. 0xe4e90 bytes (48%) free.

@@ -1,0 +1,27 @@
+Command: ninja all
+[1/14] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/bootloader/bootloader.bin""
+Bootloader binary size 0x5670 bytes. 0x990 bytes (10%) free.
+[2/14] No install step for 'bootloader'
+[3/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/runtime_config.c.obj
+[4/14] Completed 'bootloader'
+[5/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[6/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/leds.c.obj
+[7/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi.c.obj
+[8/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ota_http.c.obj
+[9/14] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/sd_storage.c.obj
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/sd_storage.c: In function 'record_task':
+C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/main/sd_storage.c:288:15: warning: unused variable 'file' [-Wunused-variable]
+  288 |         FILE *file = s_record_file;
+      |               ^~~~
+[10/14] Linking C static library esp-idf\main\libmain.a
+[11/14] Generating esp-idf/esp_system/ld/sections.ld
+[12/14] Linking CXX executable c5_esp32c5_rgb555_6x200.elf
+[13/14] Generating binary image from built executable
+esptool.py v4.12.dev2
+Creating esp32c5 image...
+Merged 1 ELF section
+Successfully created esp32c5 image.
+Generated C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin
+[14/14] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/partition_table/partition-table.bin" "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin""
+c5_esp32c5_rgb555_6x200.bin binary size 0x117250 bytes. Smallest app partition is 0x1e0000 bytes. 0xc8db0 bytes (42%) free.

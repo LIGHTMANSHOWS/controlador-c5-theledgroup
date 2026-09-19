@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Networks>
+  <network NetworkType="ArtNet" ComPort="127.0.0.1" BaudRate="0" MaxChannels="51000" Name="Lightman Bridge Localhost" Description="xLights envia todo a localhost; Lightman C5 Manager deriva a C5" Universes="100" StartUniverse="0" ChannelsPerUniverse="510" OneOutput="1" />
+</Networks>

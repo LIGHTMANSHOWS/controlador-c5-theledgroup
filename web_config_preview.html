@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>C5 config</title>
+</head>
+<body>
+  <h2>C5 Config</h2>
+
+  <form method="GET" action="/config/save">
+    <p><button type="submit">Save / Guardar</button></p>
+
+    <h3>LED</h3>
+
+    <label>
+      orden color
+      <select name="order">
+        <option selected>GRB</option>
+        <option>RGB</option>
+        <option>RBG</option>
+        <option>GBR</option>
+        <option>BRG</option>
+        <option>BGR</option>
+      </select>
+    </label><br>
+
+    <h3>Pixeles por salida</h3>
+
+    <p>Pixeles utiles de show. El primer LED fisico de cada salida queda reservado para nivel/estado.</p>
+
+    <label>pix1 <input name="pix1" type="number" value="200"></label><br>
+    <label>pix2 <input name="pix2" type="number" value="200"></label><br>
+    <label>pix3 <input name="pix3" type="number" value="200"></label><br>
+    <label>pix4 <input name="pix4" type="number" value="200"></label><br>
+    <label>pix5 <input name="pix5" type="number" value="200"></label><br>
+    <label>pix6 <input name="pix6" type="number" value="200"></label><br>
+
+    <h3>Pines LED</h3>
+
+    <p>XIAO ESP32-C5: selecciona la serigrafia D impresa en la placa.</p>
+
+    <label>led1 <select name="led1d"><option selected>D0</option><option>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option><option>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+    <label>led2 <select name="led2d"><option>D0</option><option selected>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option><option>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+    <label>led3 <select name="led3d"><option>D0</option><option>D1</option><option selected>D2</option><option>D3</option><option>D4</option><option>D5</option><option>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+    <label>led4 <select name="led4d"><option>D0</option><option>D1</option><option>D2</option><option>D3</option><option selected>D4</option><option>D5</option><option>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+    <label>led5 <select name="led5d"><option>D0</option><option>D1</option><option>D2</option><option>D3</option><option>D4</option><option selected>D5</option><option>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+    <label>led6 <select name="led6d"><option>D0</option><option>D1</option><option>D2</option><option>D3</option><option>D4</option><option>D5</option><option selected>D6</option><option>D7</option><option>D8</option><option>D9</option><option>D10</option></select></label><br>
+
+    <h3>Wi-Fi / Red</h3>
+
+    <label>SSID <input name="ssid" type="text" value="REDPIXEL"></label><br>
+    <label>password <input name="pass" type="password" value=""></label><br>
+    <label>
+      <input name="staticip" type="checkbox" value="1" checked>
+      usar IP fija
+    </label><br>
+    <label>ip <input name="ip" type="text" value="192.168.1.208"></label><br>
+    <label>gateway <input name="gateway" type="text" value="192.168.1.1"></label><br>
+    <label>netmask <input name="netmask" type="text" value="255.255.255.0"></label><br>
+
+    <p>SD desactivada: los pines D quedan libres para LED.</p><br>
+
+    <button type="submit">Save / Guardar</button>
+  </form>
+
+  <p>Despues de guardar, reinicia el C5 para aplicar pines y red Wi-Fi.</p>
+
+  <p>
+    <a href="/config.json">config.json</a> |
+    <a href="/reboot">reiniciar</a> |
+    <a href="/">inicio</a>
+  </p>
+</body>
+</html>

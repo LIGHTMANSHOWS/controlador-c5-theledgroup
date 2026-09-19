@@ -1,0 +1,29 @@
+Command: ninja all
+[1/20] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\bootloader\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x2000 "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/bootloader/bootloader.bin""
+Bootloader binary size 0x5670 bytes. 0x990 bytes (10%) free.
+[2/20] No install step for 'bootloader'
+[3/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/spi_master_link.c.obj
+[4/20] Completed 'bootloader'
+[5/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[6/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/runtime_config.c.obj
+[7/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/frame_buffer.c.obj
+[8/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/fallback_image.c.obj
+[9/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/leds.c.obj
+[10/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/rental_control.c.obj
+[11/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/udp.c.obj
+[12/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/wifi.c.obj
+[13/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/scene_master_client.c.obj
+[14/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/ota_http.c.obj
+[15/20] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/sd_storage.c.obj
+[16/20] Linking C static library esp-idf\main\libmain.a
+[17/20] Generating esp-idf/esp_system/ld/sections.ld
+[18/20] Linking CXX executable c5_esp32c5_rgb555_6x200.elf
+[19/20] Generating binary image from built executable
+esptool.py v4.12.dev2
+Creating esp32c5 image...
+Merged 1 ELF section
+Successfully created esp32c5 image.
+Generated C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin
+[20/20] C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\esp-idf\esptool_py" && C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.4-2/components/partition_table/check_sizes.py --offset 0x8000 partition --type app "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/partition_table/partition-table.bin" "C:/Users/lightman/Documents/ChatGPT/controlador c5 theledgroup/build/c5_esp32c5_rgb555_6x200.bin""
+c5_esp32c5_rgb555_6x200.bin binary size 0xfb980 bytes. Smallest app partition is 0x1e0000 bytes. 0xe4680 bytes (48%) free.

@@ -1,0 +1,35 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "wifi.c"
+        "udp.c"
+        "frame_buffer.c"
+        "fallback_image.c"
+        "runtime_config.c"
+        "spi_master_link.c"
+        "leds.c"
+        "sd_storage.c"
+        "ota_http.c"
+        "rental_control.c"
+        "scene_master_client.c"
+
+    INCLUDE_DIRS
+        "."
+        "../common"
+
+    REQUIRES
+        esp_wifi
+        esp_netif
+        esp_event
+        nvs_flash
+        lwip
+        driver
+        esp_driver_parlio
+        esp_driver_spi
+        esp_driver_sdmmc
+        fatfs
+        sdmmc
+        esp_http_server
+        app_update
+        esp_timer
+)

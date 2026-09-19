@@ -1,0 +1,13 @@
+{
+  "schema": "lightman.zones.v1",
+  "suit_id": "alas_v1",
+  "zones": [
+    { "name": "ala izquierda", "members": ["201:1", "201:2"] },
+    { "name": "ala derecha", "members": ["201:4", "201:5"] },
+    { "name": "pecho", "members": ["201:3"] },
+    { "name": "casco", "members": ["201:6"] },
+    { "name": "espalda", "members": ["202:1"] },
+    { "name": "falda", "members": ["202:2", "202:3"] },
+    { "name": "brazos", "members": ["202:4", "202:5"] }
+  ]
+}

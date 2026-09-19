@@ -1,0 +1,957 @@
+Command: C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.5.4-2\tools/idf_monitor.py -p COM47 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c5 --revision 100 --decode-panic backtrace C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\c5_esp32c5_rgb555_6x200.elf C:\Users\lightman\Documents\ChatGPT\controlador c5 theledgroup\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\python_env\idf5.5_py3.13_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.5.4-2\tools\idf.py' '-p' 'COM47'
+ESP-ROM:esp32c5-eco2-20250121
+Build:Jan 21 2025
+rst:0x15 (USB_UART_HPSYS),boot:0x18 (SPI_FAST_FLASH_BOOT)
+SPI mode:DIO, clock div:1
+load:0x408556b0,len:0x16b8
+load:0x4084bba0,len:0xde8
+load:0x4084e5a0,len:0x3170
+entry 0x4084bbaa
+[0;32mI (21) boot: ESP-IDF v5.5.4 2nd stage bootloader[0m
+[0;32mI (21) boot: compile time Sep 15 2026 21:21:18[0m
+[0;32mI (22) boot: chip revision: v1.0[0m
+[0;32mI (22) boot: efuse block revision: v0.3[0m
+[0;32mI (24) boot.esp32c5: SPI Speed      : 80MHz[0m
+[0;32mI (28) boot.esp32c5: SPI Mode       : DIO[0m
+[0;32mI (32) boot.esp32c5: SPI Flash Size : 8MB[0m
+[0;32mI (36) boot: Enabling RNG early entropy source...[0m
+[0;32mI (40) boot: Partition Table:[0m
+[0;32mI (43) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (49) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (56) boot:  1 otadata          OTA data         01 00 0000f000 00002000[0m
+[0;32mI (62) boot:  2 phy_init         RF data          01 01 00011000 00001000[0m
+[0;32mI (69) boot:  3 ota_0            OTA app          00 10 00020000 001e0000[0m
+[0;32mI (75) boot:  4 ota_1            OTA app          00 11 00200000 001e0000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00020020 vaddr=420c0020 size=24b6ch (150380) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=00044b94 vaddr=40800000 size=0b484h ( 46212) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=b9630h (759344) map[0m
+[0;32mI (246) esp_image: segment 3: paddr=00109658 vaddr=4080b484 size=0c604h ( 50692) load[0m
+[0;32mI (256) esp_image: segment 4: paddr=00115c64 vaddr=40817b00 size=0484ch ( 18508) load[0m
+[0;32mI (265) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (266) boot: Disabling RNG early entropy source...[0m
+[0;32mI (276) MSPI Timing: Enter flash timing tuning[0m
+[0;32mI (277) cpu_start: Unicore app[0m
+[0;32mI (285) cpu_start: GPIO 12 and 11 are used as console UART I/O pins[0m
+[0;32mI (286) cpu_start: Pro cpu start user code[0m
+[0;32mI (286) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (287) app_init: Application information:[0m
+[0;32mI (291) app_init: Project name:     c5_esp32c5_rgb555_6x200[0m
+[0;32mI (297) app_init: App version:      3.0.0[0m
+[0;32mI (300) app_init: Compile time:     Sep 15 2026 21:20:55[0m
+[0;32mI (305) app_init: ELF file SHA256:  4b86822ab...[0m
+[0;32mI (310) app_init: ESP-IDF:          v5.5.4[0m
+[0;32mI (313) efuse_init: Min chip rev:     v1.0[0m
+[0;32mI (317) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (321) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (325) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (331) heap_init: At 40822130 len 0003A470 (233 KiB): RAM[0m
+[0;32mI (337) heap_init: At 4085C5A0 len 00002F58 (11 KiB): RAM[0m
+[0;32mI (342) heap_init: At 50000000 len 00003FE8 (15 KiB): RTCRAM[0m
+[0;32mI (348) spi_flash: detected chip: generic[0m
+[0;32mI (351) spi_flash: flash io: dio[0m
+[0;33mW (354) spi_flash: CPU frequency is set to 240MHz. esp_flash_write_encrypted() will automatically limit CPU frequency to 80MHz during execution.[0m
+[0;32mI (367) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (373) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (388) main_task: Started on CPU0[0m
+[0;32mI (388) main_task: Calling app_main()[0m
+[0;32mI (388) main: Arrancando C5 integrado ESP32-C5: UDP+6 LED RGB555 (SD desactivada)[0m
+[0;32mI (408) main: NVS inicializado[0m
+[0;32mI (408) runtime_cfg: Config activa: pixels=[200,200,200,200,200,200] color=GRB led=[0,1,25,23,24,11] sd=[10,1,1,1] mem_fallback=0[0m
+[0;32mI (408) runtime_cfg: Wi-Fi config: ssid='REDPIXEL_5G' static=0 ip=192.168.1.201 gateway=192.168.1.1 netmask=255.255.255.0[0m
+[0;32mI (418) frame_buffer: Doble buffer RGB555 listo: 2 x 2400 bytes[0m
+[0;32mI (428) fallback_image: Imagen fija C5: disponible=0 bytes=0 checksum=00000000[0m
+[0;32mI (438) leds_parlio: ESP32-C5 PARLIO: 6 x 200 WS281x; RGB555 simetrico OK[0m
+[0;32mI (438) local_backend: Backend local C5 listo: SD desactivada, sin CAM ni enlace SPI intermedio[0m
+[0;32mI (448) rental: Boton alquiler desactivado. enabled=0 file=/sdcard/rec1.lfs[0m
+[0;32mI (458) wifi: Wi-Fi DHCP activado[0m
+[0;32mI (458) pp: pp rom version: 78a72e9d5[0m
+[0;32mI (458) net80211: net80211 rom version: 78a72e9d5[0m
+[0;32mI (478) wifi:wifi driver task: 40832234, prio:23, stack:6656, core=0[0m
+[0;32mI (478) wifi:wifi firmware version: 0947e8b[0m
+[0;32mI (478) wifi:wifi certification version: v7.0[0m
+[0;32mI (478) wifi:config NVS flash: enabled[0m
+[0;32mI (488) wifi:config nano formatting: disabled[0m
+[0;32mI (488) wifi:mac_version:HAL_MAC_ESP32AX_752MP_ECO2,ut_version:N, band mode:0x3[0m
+[0;32mI (498) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (498) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (508) wifi:Init management short buffer num: 32[0m
+[0;32mI (508) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (508) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (518) wifi:Init static rx buffer size: 1700 (rxctrl:64, csi:512)[0m
+[0;32mI (518) wifi:Init static rx buffer num: 10[0m
+[0;32mI (528) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (528) wifi_init: rx ba win: 6[0m
+[0;32mI (528) wifi_init: accept mbox: 6[0m
+[0;32mI (538) wifi_init: tcpip mbox: 32[0m
+[0;32mI (538) wifi_init: udp mbox: 6[0m
+[0;32mI (538) wifi_init: tcp mbox: 6[0m
+[0;32mI (548) wifi_init: tcp tx win: 5760[0m
+[0;32mI (548) wifi_init: tcp rx win: 5760[0m
+[0;32mI (548) wifi_init: tcp mss: 1440[0m
+[0;32mI (558) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (558) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (558) wifi_init: WiFi SLP IRAM OP enabled[0m
+[0;33mW (568) wifi:Password length is zero, but authmode threshold is 3, making it impossible to connect to an AP with authmode OPEN[0m
+[0;32mI (578) wifi:Set ps type: 0, coexist: 0[0m
+
+[0;32mI (578) phy_init: phy_version 108,cdfe9643,Dec  2 2025,11:38:11[0m
+[0;33mW (1218) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (1218) wifi:WDEV_RXOFDM_DELAY:256[0m
+[0;33mW (1218) wifi:WDEV_RX_11G_OFDM_DELAY:257[0m
+[0;33mW (1218) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (1228) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (1228) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (1238) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (1248) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (1248) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (1258) wifi:(agc)0x600a7128:0xd218a800, min.avgNF:0xce->0xd2(dB), RCalCount:0x18a, min.RRssi:0x800(-128.00)[0m
+[0;33mW (1268) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (1278) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:20, txing:20[0m
+[0;33mW (1278) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:20, txing:20[0m
+[0;33mW (1288) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:20, txing:20[0m
+[0;33mW (1288) wifi:(phy)rate:0x3( LP-11Mbps), pwr:20, txing:20[0m
+[0;33mW (1298) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:20, txing:20[0m
+[0;33mW (1298) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:20, txing:20[0m
+[0;33mW (1308) wifi:(phy)rate:0x7( SP-11Mbps), pwr:20, txing:20[0m
+[0;33mW (1308) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (1318) wifi:(phy)rate:0x9(    24Mbps), pwr:19, txing:19[0m
+[0;33mW (1318) wifi:(phy)rate:0xa(    12Mbps), pwr:19, txing:19[0m
+[0;33mW (1328) wifi:(phy)rate:0xb(     6Mbps), pwr:19, txing:19[0m
+[0;33mW (1328) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (1338) wifi:(phy)rate:0xd(    36Mbps), pwr:19, txing:19[0m
+[0;33mW (1338) wifi:(phy)rate:0xe(    18Mbps), pwr:19, txing:19[0m
+[0;33mW (1348) wifi:(phy)rate:0xf(     9Mbps), pwr:19, txing:19[0m
+[0;33mW (1348) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:19, bw40:18), txing:19, HE pwr(bw20:19), txing:19[0m
+[0;33mW (1358) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:19, bw40:18), txing:19, HE pwr(bw20:19), txing:19[0m
+[0;33mW (1368) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (1378) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (1388) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (1388) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (1398) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (1408) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (1418) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:19, bw40:16), txing:19, HE pwr(bw20:16), txing:16[0m
+[0;33mW (1428) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:16), txing:18, HE pwr(bw20:15), txing:15[0m
+[0;33mW (1438) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (1448) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (1448) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (1458) wifi:enable tsf[0m
+[0;33mW (1458) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (1468) wifi: Wi-Fi STA iniciado en 883 ms[0m
+[0;32mI (1468) wifi:wifi set band mode, new band mode 2, old band mode 3[0m
+[0;33mW (1468) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (1478) wifi:enable tsf[0m
+[0;33mW (1478) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (1488) wifi: Wi-Fi STA iniciado en 904 ms[0m
+[0;32mI (1488) wifi: Wi-Fi fijado en banda 5 GHz[0m
+[0;32mI (1488) wifi: Wi-Fi rapido directo SSID='REDPIXEL_5G' canal=0 bssid='' retry=1500 ms min_rssi=-95. Power-save OFF.[0m
+[0;32mI (1508) ota_http: HTTP OTA/control listo: abre http://192.168.1.201/ o POST /ota[0m
+[0;32mI (1508) udp: UDP unicast 7777: 2 paquetes x 600 pixeles RGB555[0m
+[0;32mI (1518) scene_client: Escuchando control maestro UDP 7780[0m
+[0;32mI (1518) main: Listo: UDP RGB555 unicast, 2 paquetes/frame, 6x200 LED paralelos. SD desactivada.[0m
+[0;32mI (1528) main_task: Returned from app_main()[0m
+[0;33mW (5008) wifi: Intento Wi-Fi 1 excedio 3500 ms (3511 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (5008) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (5008) wifi: Wi-Fi desconectado reason=36 intento=2 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (5098) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (5098) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (5098) wifi:flush txq[0m
+[0;32mI (5098) wifi:stop sw txq[0m
+[0;32mI (5098) wifi:lmac stop hw txq[0m
+[0;33mW (5218) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (5218) wifi:WDEV_RXOFDM_DELAY:264[0m
+[0;33mW (5218) wifi:WDEV_RX_11G_OFDM_DELAY:265[0m
+[0;33mW (5218) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (5218) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (5218) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (5228) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (5238) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (5238) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (5248) wifi:(agc)0x600a7128:0xd20bc9d8, min.avgNF:0xce->0xd2(dB), RCalCount:0xbc, min.RRssi:0x9d8(-98.50)[0m
+[0;33mW (5258) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (5268) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (5268) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (5278) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (5278) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (5288) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (5288) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (5298) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (5298) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (5308) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (5308) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (5318) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (5318) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (5328) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (5328) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (5338) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (5338) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (5348) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (5358) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (5368) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (5378) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (5388) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (5398) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (5398) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (5408) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (5418) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (5428) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (5438) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (5438) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (5448) wifi:enable tsf[0m
+[0;33mW (5448) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (5458) wifi: Wi-Fi STA iniciado en 4876 ms[0m
+[0;33mW (9058) wifi: Intento Wi-Fi 2 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (9058) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (9058) wifi: Wi-Fi desconectado reason=36 intento=3 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (9148) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (9148) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (9148) wifi:flush txq[0m
+[0;32mI (9148) wifi:stop sw txq[0m
+[0;32mI (9148) wifi:lmac stop hw txq[0m
+[0;33mW (9268) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (9268) wifi:WDEV_RXOFDM_DELAY:259[0m
+[0;33mW (9268) wifi:WDEV_RX_11G_OFDM_DELAY:260[0m
+[0;33mW (9268) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (9268) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (9268) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (9278) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (9288) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (9288) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (9298) wifi:(agc)0x600a7128:0xd20709d6, min.avgNF:0xce->0xd2(dB), RCalCount:0x70, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (9308) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (9318) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (9318) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (9328) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (9328) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (9338) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (9338) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (9348) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (9348) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (9358) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (9358) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (9368) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (9368) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (9378) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (9378) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (9388) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (9388) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (9398) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (9408) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (9418) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (9428) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (9438) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (9448) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (9448) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (9458) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (9468) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (9478) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (9488) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (9488) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (9498) wifi:enable tsf[0m
+[0;33mW (9498) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (9508) wifi: Wi-Fi STA iniciado en 8926 ms[0m
+[0;33mW (13108) wifi: Intento Wi-Fi 3 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (13108) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (13108) wifi: Wi-Fi desconectado reason=36 intento=4 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (13198) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (13198) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (13198) wifi:flush txq[0m
+[0;32mI (13198) wifi:stop sw txq[0m
+[0;32mI (13198) wifi:lmac stop hw txq[0m
+[0;33mW (13318) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (13318) wifi:WDEV_RXOFDM_DELAY:266[0m
+[0;33mW (13318) wifi:WDEV_RX_11G_OFDM_DELAY:267[0m
+[0;33mW (13318) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (13318) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (13318) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (13328) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (13338) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (13348) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (13348) wifi:(agc)0x600a7128:0xd214e9d6, min.avgNF:0xce->0xd2(dB), RCalCount:0x14e, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (13358) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (13368) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (13368) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (13378) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (13378) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (13388) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (13388) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (13398) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (13408) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (13408) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (13418) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (13418) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (13428) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (13428) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (13438) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (13438) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (13448) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (13458) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (13458) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (13468) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (13478) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (13488) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (13498) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (13508) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (13518) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (13528) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (13528) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (13538) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (13548) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (13548) wifi:enable tsf[0m
+[0;33mW (13548) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (13558) wifi: Wi-Fi STA iniciado en 12979 ms[0m
+[0;33mW (17158) wifi: Intento Wi-Fi 4 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (17158) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (17158) wifi: Wi-Fi desconectado reason=36 intento=5 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (17248) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (17248) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (17248) wifi:flush txq[0m
+[0;32mI (17248) wifi:stop sw txq[0m
+[0;32mI (17248) wifi:lmac stop hw txq[0m
+[0;33mW (17368) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (17368) wifi:WDEV_RXOFDM_DELAY:261[0m
+[0;33mW (17368) wifi:WDEV_RX_11G_OFDM_DELAY:262[0m
+[0;33mW (17368) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (17368) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (17368) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (17378) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (17388) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (17398) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (17398) wifi:(agc)0x600a7128:0xd21729e2, min.avgNF:0xce->0xd2(dB), RCalCount:0x172, min.RRssi:0x9e2(-97.88)[0m
+[0;33mW (17408) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (17418) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (17418) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (17428) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (17428) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (17438) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (17438) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (17448) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (17458) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (17458) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (17468) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (17468) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (17478) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (17478) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (17488) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (17488) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (17498) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (17508) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (17508) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (17518) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (17528) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (17538) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (17548) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (17558) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (17568) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (17578) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (17578) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (17588) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (17598) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (17598) wifi:enable tsf[0m
+[0;33mW (17598) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (17608) wifi: Wi-Fi STA iniciado en 17029 ms[0m
+[0;33mW (21208) wifi: Intento Wi-Fi 5 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (21208) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (21208) wifi: Wi-Fi desconectado reason=36 intento=6 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (21298) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (21298) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (21298) wifi:flush txq[0m
+[0;32mI (21298) wifi:stop sw txq[0m
+[0;32mI (21298) wifi:lmac stop hw txq[0m
+[0;33mW (21418) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (21418) wifi:WDEV_RXOFDM_DELAY:258[0m
+[0;33mW (21418) wifi:WDEV_RX_11G_OFDM_DELAY:259[0m
+[0;33mW (21418) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (21418) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (21418) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (21428) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (21438) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (21448) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (21448) wifi:(agc)0x600a7128:0xd20c09d6, min.avgNF:0xce->0xd2(dB), RCalCount:0xc0, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (21458) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (21468) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (21468) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (21478) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (21478) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (21488) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (21488) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (21498) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (21508) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (21508) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (21518) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (21518) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (21528) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (21528) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (21538) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (21538) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (21548) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (21558) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (21558) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (21568) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (21578) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (21588) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (21598) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (21608) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (21618) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (21618) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (21628) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (21638) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (21648) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (21648) wifi:enable tsf[0m
+[0;33mW (21648) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (21658) wifi: Wi-Fi STA iniciado en 21079 ms[0m
+[0;33mW (25258) wifi: Intento Wi-Fi 6 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (25258) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (25258) wifi: Wi-Fi desconectado reason=36 intento=7 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (25348) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (25348) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (25348) wifi:flush txq[0m
+[0;32mI (25348) wifi:stop sw txq[0m
+[0;32mI (25348) wifi:lmac stop hw txq[0m
+[0;33mW (25468) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (25468) wifi:WDEV_RXOFDM_DELAY:264[0m
+[0;33mW (25468) wifi:WDEV_RX_11G_OFDM_DELAY:265[0m
+[0;33mW (25468) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (25468) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (25468) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (25478) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (25488) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (25498) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (25498) wifi:(agc)0x600a7128:0xd217a9e8, min.avgNF:0xce->0xd2(dB), RCalCount:0x17a, min.RRssi:0x9e8(-97.50)[0m
+[0;33mW (25508) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (25518) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (25518) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (25528) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (25528) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (25538) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (25538) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (25548) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (25558) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (25558) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (25568) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (25568) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (25578) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (25578) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (25588) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (25588) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (25598) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (25608) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (25608) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (25618) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (25628) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (25638) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (25648) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (25658) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (25668) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (25678) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (25678) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (25688) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (25698) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (25698) wifi:enable tsf[0m
+[0;33mW (25698) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (25708) wifi: Wi-Fi STA iniciado en 25129 ms[0m
+[0;33mW (29308) wifi: Intento Wi-Fi 7 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (29308) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (29308) wifi: Wi-Fi desconectado reason=36 intento=8 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (29398) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (29398) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (29398) wifi:flush txq[0m
+[0;32mI (29398) wifi:stop sw txq[0m
+[0;32mI (29398) wifi:lmac stop hw txq[0m
+[0;33mW (29518) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (29518) wifi:WDEV_RXOFDM_DELAY:262[0m
+[0;33mW (29518) wifi:WDEV_RX_11G_OFDM_DELAY:263[0m
+[0;33mW (29518) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (29518) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (29518) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (29528) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (29538) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (29548) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (29548) wifi:(agc)0x600a7128:0xd213c9d6, min.avgNF:0xce->0xd2(dB), RCalCount:0x13c, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (29558) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (29568) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (29568) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (29578) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (29578) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (29588) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (29588) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (29598) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (29608) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (29608) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (29618) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (29618) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (29628) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (29628) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (29638) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (29638) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (29648) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (29658) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (29658) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (29668) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (29678) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (29688) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (29698) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (29708) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (29718) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (29728) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (29728) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (29738) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (29748) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (29748) wifi:enable tsf[0m
+[0;33mW (29748) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (29758) wifi: Wi-Fi STA iniciado en 29179 ms[0m
+[0;33mW (33358) wifi: Intento Wi-Fi 8 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (33358) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (33358) wifi: Wi-Fi desconectado reason=36 intento=9 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (33448) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (33448) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (33448) wifi:flush txq[0m
+[0;32mI (33448) wifi:stop sw txq[0m
+[0;32mI (33448) wifi:lmac stop hw txq[0m
+[0;33mW (33568) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (33568) wifi:WDEV_RXOFDM_DELAY:261[0m
+[0;33mW (33568) wifi:WDEV_RX_11G_OFDM_DELAY:262[0m
+[0;33mW (33568) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (33568) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (33568) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (33578) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (33588) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (33598) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (33598) wifi:(agc)0x600a7128:0xd20299da, min.avgNF:0xce->0xd2(dB), RCalCount:0x29, min.RRssi:0x9da(-98.38)[0m
+[0;33mW (33608) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (33618) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (33618) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (33628) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (33628) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (33638) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (33638) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (33648) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (33658) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (33658) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (33668) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (33668) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (33678) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (33678) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (33688) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (33688) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (33698) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (33708) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (33708) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (33718) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (33728) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (33738) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (33748) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (33758) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (33768) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (33778) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (33778) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (33788) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (33798) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (33798) wifi:enable tsf[0m
+[0;33mW (33798) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (33808) wifi: Wi-Fi STA iniciado en 33229 ms[0m
+[0;33mW (37408) wifi: Intento Wi-Fi 9 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (37408) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (37408) wifi: Wi-Fi desconectado reason=36 intento=10 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (37498) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (37498) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (37498) wifi:flush txq[0m
+[0;32mI (37498) wifi:stop sw txq[0m
+[0;32mI (37498) wifi:lmac stop hw txq[0m
+[0;33mW (37618) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (37618) wifi:WDEV_RXOFDM_DELAY:257[0m
+[0;33mW (37618) wifi:WDEV_RX_11G_OFDM_DELAY:258[0m
+[0;33mW (37618) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (37618) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (37618) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (37628) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (37638) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (37648) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (37648) wifi:(agc)0x600a7128:0xd21a39dc, min.avgNF:0xce->0xd2(dB), RCalCount:0x1a3, min.RRssi:0x9dc(-98.25)[0m
+[0;33mW (37658) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (37668) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (37668) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (37678) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (37678) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (37688) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (37688) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (37698) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (37708) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (37708) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (37718) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (37718) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (37728) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (37728) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (37738) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (37738) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (37748) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (37758) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (37758) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (37768) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (37778) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (37788) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (37798) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (37808) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (37818) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (37828) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (37828) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (37838) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (37848) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (37848) wifi:enable tsf[0m
+[0;33mW (37848) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (37858) wifi: Wi-Fi STA iniciado en 37279 ms[0m
+[0;33mW (41458) wifi: Intento Wi-Fi 10 excedio 3500 ms (3520 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (41458) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (41458) wifi: Wi-Fi desconectado reason=36 intento=11 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (41548) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (41548) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (41548) wifi:flush txq[0m
+[0;32mI (41548) wifi:stop sw txq[0m
+[0;32mI (41548) wifi:lmac stop hw txq[0m
+[0;33mW (41668) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (41668) wifi:WDEV_RXOFDM_DELAY:263[0m
+[0;33mW (41668) wifi:WDEV_RX_11G_OFDM_DELAY:264[0m
+[0;33mW (41668) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (41668) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (41668) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (41678) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (41688) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (41698) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (41698) wifi:(agc)0x600a7128:0xd21b79dc, min.avgNF:0xce->0xd2(dB), RCalCount:0x1b7, min.RRssi:0x9dc(-98.25)[0m
+[0;33mW (41708) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (41718) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (41718) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (41728) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (41728) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (41738) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (41738) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (41748) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (41758) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (41758) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (41768) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (41768) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (41778) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (41778) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (41788) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (41788) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (41798) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (41808) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (41808) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (41818) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (41828) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (41838) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (41848) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (41858) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (41868) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (41878) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (41878) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (41888) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (41898) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (41898) wifi:enable tsf[0m
+[0;33mW (41898) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (41908) wifi: Wi-Fi STA iniciado en 41329 ms[0m
+[0;33mW (45508) wifi: Intento Wi-Fi 11 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (45508) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (45508) wifi: Wi-Fi desconectado reason=36 intento=12 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (45598) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (45598) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (45598) wifi:flush txq[0m
+[0;32mI (45598) wifi:stop sw txq[0m
+[0;32mI (45598) wifi:lmac stop hw txq[0m
+[0;33mW (45718) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (45718) wifi:WDEV_RXOFDM_DELAY:262[0m
+[0;33mW (45718) wifi:WDEV_RX_11G_OFDM_DELAY:263[0m
+[0;33mW (45718) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (45718) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (45718) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (45728) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (45738) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (45748) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (45748) wifi:(agc)0x600a7128:0xd20999da, min.avgNF:0xce->0xd2(dB), RCalCount:0x99, min.RRssi:0x9da(-98.38)[0m
+[0;33mW (45758) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (45768) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (45768) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (45778) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (45778) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (45788) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (45788) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (45798) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (45808) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (45808) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (45818) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (45818) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (45828) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (45828) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (45838) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (45838) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (45848) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (45858) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (45858) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (45868) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (45878) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (45888) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (45898) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (45908) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (45918) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (45928) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (45928) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (45938) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (45948) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (45948) wifi:enable tsf[0m
+[0;33mW (45948) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (45958) wifi: Wi-Fi STA iniciado en 45379 ms[0m
+[0;33mW (49558) wifi: Intento Wi-Fi 12 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (49558) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (49558) wifi: Wi-Fi desconectado reason=36 intento=13 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (49648) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (49648) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (49648) wifi:flush txq[0m
+[0;32mI (49648) wifi:stop sw txq[0m
+[0;32mI (49648) wifi:lmac stop hw txq[0m
+[0;33mW (49768) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (49768) wifi:WDEV_RXOFDM_DELAY:263[0m
+[0;33mW (49768) wifi:WDEV_RX_11G_OFDM_DELAY:264[0m
+[0;33mW (49768) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (49768) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (49768) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (49778) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (49788) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (49798) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (49798) wifi:(agc)0x600a7128:0xd21579d4, min.avgNF:0xce->0xd2(dB), RCalCount:0x157, min.RRssi:0x9d4(-98.75)[0m
+[0;33mW (49808) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (49818) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (49818) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (49828) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (49828) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (49838) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (49838) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (49848) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (49858) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (49858) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (49868) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (49868) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (49878) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (49878) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (49888) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (49888) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (49898) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (49908) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (49908) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (49918) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (49928) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (49938) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (49948) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (49958) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (49968) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (49978) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (49978) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (49988) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (49998) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (49998) wifi:enable tsf[0m
+[0;33mW (49998) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (50008) wifi: Wi-Fi STA iniciado en 49429 ms[0m
+[0;33mW (53608) wifi: Intento Wi-Fi 13 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (53608) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (53608) wifi: Wi-Fi desconectado reason=36 intento=14 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (53698) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (53698) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (53698) wifi:flush txq[0m
+[0;32mI (53698) wifi:stop sw txq[0m
+[0;32mI (53698) wifi:lmac stop hw txq[0m
+[0;33mW (53818) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (53818) wifi:WDEV_RXOFDM_DELAY:258[0m
+[0;33mW (53818) wifi:WDEV_RX_11G_OFDM_DELAY:259[0m
+[0;33mW (53818) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (53818) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (53818) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (53828) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (53838) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (53848) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (53848) wifi:(agc)0x600a7128:0xd208b9d6, min.avgNF:0xce->0xd2(dB), RCalCount:0x8b, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (53858) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (53868) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (53868) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (53878) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (53878) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (53888) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (53888) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (53898) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (53908) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (53908) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (53918) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (53918) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (53928) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (53928) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (53938) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (53938) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (53948) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (53958) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (53958) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (53968) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (53978) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (53988) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (53998) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (54008) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (54018) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (54028) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (54028) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (54038) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (54048) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (54048) wifi:enable tsf[0m
+[0;33mW (54048) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (54058) wifi: Wi-Fi STA iniciado en 53479 ms[0m
+[0;33mW (57658) wifi: Intento Wi-Fi 14 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (57658) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (57658) wifi: Wi-Fi desconectado reason=36 intento=15 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (57748) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (57748) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (57748) wifi:flush txq[0m
+[0;32mI (57748) wifi:stop sw txq[0m
+[0;32mI (57748) wifi:lmac stop hw txq[0m
+[0;33mW (57868) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (57868) wifi:WDEV_RXOFDM_DELAY:262[0m
+[0;33mW (57868) wifi:WDEV_RX_11G_OFDM_DELAY:263[0m
+[0;33mW (57868) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (57868) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (57868) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (57878) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (57888) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (57898) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (57898) wifi:(agc)0x600a7128:0xd21279d6, min.avgNF:0xce->0xd2(dB), RCalCount:0x127, min.RRssi:0x9d6(-98.62)[0m
+[0;33mW (57908) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (57918) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (57918) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (57928) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (57928) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (57938) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (57938) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (57948) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (57958) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (57958) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (57968) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (57968) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (57978) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (57978) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (57988) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (57988) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (57998) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (58008) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (58008) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (58018) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (58028) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (58038) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (58048) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (58058) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (58068) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (58078) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (58078) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (58088) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (58098) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (58098) wifi:enable tsf[0m
+[0;33mW (58098) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (58108) wifi: Wi-Fi STA iniciado en 57529 ms[0m
+[0;33mW (61708) wifi: Intento Wi-Fi 15 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (61708) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (61708) wifi: Wi-Fi desconectado reason=36 intento=16 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (61798) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (61798) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (61798) wifi:flush txq[0m
+[0;32mI (61798) wifi:stop sw txq[0m
+[0;32mI (61798) wifi:lmac stop hw txq[0m
+[0;33mW (61918) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (61918) wifi:WDEV_RXOFDM_DELAY:260[0m
+[0;33mW (61918) wifi:WDEV_RX_11G_OFDM_DELAY:261[0m
+[0;33mW (61918) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (61918) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (61918) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (61928) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (61938) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (61948) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (61948) wifi:(agc)0x600a7128:0xd20ac9dc, min.avgNF:0xce->0xd2(dB), RCalCount:0xac, min.RRssi:0x9dc(-98.25)[0m
+[0;33mW (61958) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (61968) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (61968) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (61978) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (61978) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (61988) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (61988) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (61998) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (62008) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (62008) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (62018) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (62018) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (62028) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (62028) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (62038) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (62038) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (62048) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (62058) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (62058) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (62068) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (62078) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (62088) wifi:(phy)rate:0x15, mcs:0x5, pwr(bw20:16, bw40:16), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (62098) wifi:(phy)rate:0x16, mcs:0x6, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (62108) wifi:(phy)rate:0x17, mcs:0x7, pwr(bw20:16, bw40:15), txing:16, HE pwr(bw20:16), txing:16[0m
+[0;33mW (62118) wifi:(phy)rate:0x18, mcs:0x8, pwr(bw20:15, bw40:15), txing:15, HE pwr(bw20:15), txing:15[0m
+[0;33mW (62128) wifi:(phy)rate:0x19, mcs:0x9, pwr(bw20:18, bw40:15), txing:18, HE pwr(bw20:14), txing:14[0m
+[0;33mW (62128) wifi:(hal)co_hosted_bss:0, max_indicator:0, bitmask:0xff, mBSSIDsEnable:0[0m
+[0;32mI (62138) wifi:11ax coex: WDEVAX_PTI0(0x55777555), WDEVAX_PTI1(0x00003377).[0m
+
+[0;32mI (62148) wifi:mode : sta (38:44:be:1f:ff:b8)[0m
+[0;32mI (62148) wifi:enable tsf[0m
+[0;33mW (62148) wifi:(BB)enable busy check(0x18), disable idle check(0xaa)[0m
+[0;32mI (62158) wifi: Wi-Fi STA iniciado en 61579 ms[0m
+[0;33mW (65758) wifi: Intento Wi-Fi 16 excedio 3500 ms (3519 ms reales, asociado=0). Cortando y reintentando directo...[0m
+[0;33mW (65758) wifi:(itwt)itwt_stop_process![0m
+[0;33mW (65758) wifi: Wi-Fi desconectado reason=36 intento=17 tiempo=0 ms. Supervisor reintentara...[0m
+[0;33mW (65848) wifi: Reiniciando radio Wi-Fi antes de reintentar asociacion[0m
+[0;33mW (65848) wifi:(itwt)itwt_stop_process![0m
+[0;32mI (65848) wifi:flush txq[0m
+[0;32mI (65848) wifi:stop sw txq[0m
+[0;32mI (65848) wifi:lmac stop hw txq[0m
+[0;33mW (65968) wifi:WDEV_RXCCK_DELAY:960[0m
+[0;33mW (65968) wifi:WDEV_RXOFDM_DELAY:258[0m
+[0;33mW (65968) wifi:WDEV_RX_11G_OFDM_DELAY:259[0m
+[0;33mW (65968) wifi:WDEV_TXCCK_DELAY:630[0m
+[0;33mW (65968) wifi:WDEV_TXOFDM_DELAY:94[0m
+[0;33mW (65968) wifi:ACK_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (65978) wifi:CTS_TAB0   :0x   90a0b, QAM16:0x9 (24Mbps), QPSK:0xa (12Mbps), BPSK:0xb (6Mbps)[0m
+[0;33mW (65988) wifi:WDEVBEAMFORMCONF:0x61d7120, HE_BF_RPT_RA_SET_OPT:1[0m
+[0;33mW (65998) wifi:WDEVVHTBEAMFORMCONF: 0x61d7120, WDEV_VHT_BEAMFORMEE_ENA: 1, WDEV_VHT_NG_SEL: 0[0m
+[0;33mW (65998) wifi:(agc)0x600a7128:0xd21349de, min.avgNF:0xce->0xd2(dB), RCalCount:0x134, min.RRssi:0x9de(-98.12)[0m
+[0;33mW (66008) wifi:MODEM_SYSCON_WIFI_BB_CFG_REG(0x600a9c18):0x10003802[0m
+[0;33mW (66018) wifi:(phy)rate:0x0(  LP-1Mbps), pwr:18, txing:18[0m
+[0;33mW (66018) wifi:(phy)rate:0x1(  LP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (66028) wifi:(phy)rate:0x2(LP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (66028) wifi:(phy)rate:0x3( LP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (66038) wifi:(phy)rate:0x5(  SP-2Mbps), pwr:18, txing:18[0m
+[0;33mW (66038) wifi:(phy)rate:0x6(SP-5.5Mbps), pwr:18, txing:18[0m
+[0;33mW (66048) wifi:(phy)rate:0x7( SP-11Mbps), pwr:18, txing:18[0m
+[0;33mW (66058) wifi:(phy)rate:0x8(    48Mbps), pwr:17, txing:17[0m
+[0;33mW (66058) wifi:(phy)rate:0x9(    24Mbps), pwr:18, txing:18[0m
+[0;33mW (66068) wifi:(phy)rate:0xa(    12Mbps), pwr:18, txing:18[0m
+[0;33mW (66068) wifi:(phy)rate:0xb(     6Mbps), pwr:18, txing:18[0m
+[0;33mW (66078) wifi:(phy)rate:0xc(    54Mbps), pwr:17, txing:17[0m
+[0;33mW (66078) wifi:(phy)rate:0xd(    36Mbps), pwr:18, txing:18[0m
+[0;33mW (66088) wifi:(phy)rate:0xe(    18Mbps), pwr:18, txing:18[0m
+[0;33mW (66088) wifi:(phy)rate:0xf(     9Mbps), pwr:18, txing:18[0m
+[0;33mW (66098) wifi:(phy)rate:0x10, mcs:0x0, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (66108) wifi:(phy)rate:0x11, mcs:0x1, pwr(bw20:18, bw40:17), txing:18, HE pwr(bw20:18), txing:18[0m
+[0;33mW (66108) wifi:(phy)rate:0x12, mcs:0x2, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (66118) wifi:(phy)rate:0x13, mcs:0x3, pwr(bw20:17, bw40:16), txing:17, HE pwr(bw20:17), txing:17[0m
+[0;33mW (66128) wifi:(phy)rate:0x14, mcs:0x4, pwr(bw20:16, bw40:16), txing:16, HE pwr

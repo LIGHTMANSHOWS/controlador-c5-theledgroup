@@ -1,0 +1,37 @@
+{
+  "schema": "lightman.suit.v1",
+  "name": "Traje Alas V1",
+  "id": "alas_v1",
+  "version": "1.0",
+  "color_order": "GRB",
+  "status_pixel_per_output": true,
+  "controllers": [
+    {
+      "number": 1,
+      "ip": "192.168.1.201",
+      "enabled": true,
+      "outputs": [
+        { "output": 1, "pixels": 180, "zone": "ala_izquierda_1" },
+        { "output": 2, "pixels": 180, "zone": "ala_izquierda_2" },
+        { "output": 3, "pixels": 150, "zone": "pecho" },
+        { "output": 4, "pixels": 200, "zone": "ala_derecha_1" },
+        { "output": 5, "pixels": 200, "zone": "ala_derecha_2" },
+        { "output": 6, "pixels": 90, "zone": "casco" }
+      ]
+    },
+    {
+      "number": 2,
+      "ip": "192.168.1.202",
+      "enabled": true,
+      "outputs": [
+        { "output": 1, "pixels": 200, "zone": "espalda" },
+        { "output": 2, "pixels": 200, "zone": "falda_1" },
+        { "output": 3, "pixels": 200, "zone": "falda_2" },
+        { "output": 4, "pixels": 120, "zone": "brazo_izquierdo" },
+        { "output": 5, "pixels": 120, "zone": "brazo_derecho" },
+        { "output": 6, "pixels": 0, "zone": "sin_uso" }
+      ]
+    }
+  ]
+}
+

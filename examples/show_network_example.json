@@ -1,0 +1,23 @@
+{
+  "schema": "lightman.show_network.v1",
+  "name": "Show Demo Localhost",
+  "input": {
+    "protocol": "artnet",
+    "bind": "127.0.0.1",
+    "port": 6454,
+    "fps": 30,
+    "dmx_data_channels": 510
+  },
+  "suits": [
+    {
+      "id": "alas_v1",
+      "name": "Traje Alas V1",
+      "path": "examples/suit_alas_v1.json",
+      "start_pixel": 1,
+      "pixel_count": 1840,
+      "start_universe": 0,
+      "start_channel": 1
+    }
+  ]
+}
+
