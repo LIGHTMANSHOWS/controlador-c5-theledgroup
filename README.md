@@ -2,6 +2,19 @@
 
 Firmware integrado para usar solo el C5: recibe video UDP, maneja 6 salidas WS281x de 200 pixeles cada una, graba/reproduce desde microSD y conserva la interfaz HTTP de control.
 
+## Versión definitiva: 11 trajes Ninja
+
+El puente definitivo es `dist\C5SenderManagerApp.exe`. Recibe Art-Net desde xLights y asigna siempre un bloque fijo de 1.200 píxeles (3.600 canales RGB) a cada C5. Por ello, aunque cada traje use 936 píxeles, el siguiente controlador conserva su inicio previsto:
+
+| C5 | Píxel inicial | Canal RGB inicial |
+| --- | ---: | ---: |
+| 1 | 1 | 1 |
+| 2 | 1201 | 3601 |
+| 3 | 2401 | 7201 |
+| 11 | 12001 | 36001 |
+
+El show definitivo de xLights está en `TLG\`: incluye el layout de los 11 trajes, las 78 redes Art-Net, la secuencia y los exports `.xmodel`. Usa el puente en modo automático, sin `patch_map`, para conservar este direccionamiento fijo.
+
 ## Decision de salida LED
 
 En ESP32-C5 no conviene usar I2S para las WS281x. El C5 tiene I2S, pero para seis lineas sincronizadas el periferico correcto es PARLIO TX con GDMA:

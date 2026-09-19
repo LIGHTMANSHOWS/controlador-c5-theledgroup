@@ -440,10 +440,8 @@ class ManagerApp(tk.Tk):
         self._test_pixel(output, str(pixel))
 
     def _pixel_channel_label(self, controller_index: int, counts: list[int], mask: int, output: int, pixel: int) -> str:
-        """Canales RGB uno basados, consecutivos entre C5 y salidas activas."""
-        with self.state.lock:
-            previous_controllers = [dict(c) for c in self.state.controllers[:controller_index]]
-        pixels_in_previous_controllers = sum(core.active_pixels(c) for c in previous_controllers)
+        """Canales RGB uno basados dentro de bloques C5 fijos de 1.200 píxeles."""
+        pixels_in_previous_controllers = controller_index * core.MAX_PIXELS_PER_CONTROLLER
         pixels_before = sum(count for index, count in enumerate(counts[:output]) if mask & (1 << index))
         first_channel = (pixels_in_previous_controllers + pixels_before + pixel - 1) * core.CHANNELS_PER_PIXEL + 1
         return f"Píxel {pixel}  (canales {first_channel}–{first_channel + 2})"

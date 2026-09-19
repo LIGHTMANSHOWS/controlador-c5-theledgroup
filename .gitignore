@@ -1,0 +1,3 @@
+# Artefactos temporales de Python y compilaciones de pruebas del puente.
+tools/__pycache__/
+build/C5Sender*/

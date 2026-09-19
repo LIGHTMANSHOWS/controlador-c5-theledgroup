@@ -28,6 +28,7 @@ PIXELS_PER_OUTPUT = 200  # fallback profile when no map is loaded
 MAX_PIXELS_PER_OUTPUT = 600
 MAX_PIXELS_PER_CONTROLLER = 1200
 CHANNELS_PER_PIXEL = 3
+CHANNELS_PER_CONTROLLER_BLOCK = MAX_PIXELS_PER_CONTROLLER * CHANNELS_PER_PIXEL
 CHANNELS_PER_OUTPUT = PIXELS_PER_OUTPUT * CHANNELS_PER_PIXEL
 DMX_CHANNELS = 512
 DEFAULT_DMX_DATA_CHANNELS = 510
@@ -503,8 +504,8 @@ def build_controller_frame(universes: list[bytearray], start_channel: int, order
                            dmx_data_channels: int, output_counts: list[int], active_mask: int) -> bytes:
     """Construye un C5 desde su primer canal RGB global (base cero).
 
-    El inicio no depende del número de C5 ni de bloques fijos de universos:
-    es la suma de los LEDs activos configurados en los C5 anteriores.
+    El llamador asigna a cada C5 un bloque fijo de 1.200 píxeles (3.600 canales).
+    Los LEDs no utilizados dentro del bloque permanecen reservados.
     """
     if len(output_counts) != OUTPUTS:
         raise ValueError("El C5 debe tener seis salidas")
@@ -524,10 +525,17 @@ def build_controller_frame(universes: list[bytearray], start_channel: int, order
 
 
 def active_pixels(controller: dict[str, Any]) -> int:
-    """Cantidad de LEDs que reserva un C5 en la cadena global de xLights."""
+    """Cantidad de LEDs físicos activos en un C5."""
     counts = controller.get("pixels_per_output", [])
     mask = int(controller.get("active_outputs_mask", 0))
     return sum(int(count) for output, count in enumerate(counts) if mask & (1 << output))
+
+
+def controller_start_channel(controller_index: int) -> int:
+    """Canal RGB global base cero para un bloque C5 fijo de 1.200 píxeles."""
+    if controller_index < 0:
+        raise ValueError("El índice de controlador no puede ser negativo")
+    return controller_index * CHANNELS_PER_CONTROLLER_BLOCK
 
 
 def load_patch_map(path: str) -> tuple[list[dict[str, Any]], dict[str, list[dict[str, Any]]]]:
@@ -978,14 +986,10 @@ def sender_thread(state: SharedState) -> None:
                 if running:
                     with state.lock:
                         controllers = [dict(c) for c in state.controllers]
-                    # xLights numera los canales de forma continua. Cada C5
-                    # comienza justo después del último LED activo del anterior,
-                    # aunque alguno esté temporalmente offline o deshabilitado.
-                    first_channels: list[int] = []
-                    next_channel = 0
-                    for configured_controller in controllers:
-                        first_channels.append(next_channel)
-                        next_channel += active_pixels(configured_controller) * CHANNELS_PER_PIXEL
+                    # Cada C5 reserva siempre 1.200 píxeles (3.600 canales RGB).
+                    # Así el C5 #2 empieza en el canal visible 3.601, aunque el
+                    # C5 #1 use menos LEDs, y coincide con el layout de xLights.
+                    first_channels = [controller_start_channel(index) for index in range(len(controllers))]
                     for index, controller in enumerate(controllers):
                         if not controller.get("enabled") or not controller.get("online"):
                             continue
