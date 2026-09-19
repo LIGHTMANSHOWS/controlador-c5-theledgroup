@@ -381,7 +381,7 @@ class ManagerApp(tk.Tk):
                     scale.set(value)
                 finally:
                     self._syncing_pixel_scale = False
-                self.test_pixel_displays[output].set(self._pixel_channel_label(counts, mask, output, value))
+                self.test_pixel_displays[output].set(self._pixel_channel_label(index, counts, mask, output, value))
             else:
                 variable.set(0)
                 label.configure(text=f"Salida {output + 1} · {pin_label} · desactivada")
@@ -439,11 +439,13 @@ class ManagerApp(tk.Tk):
             self._syncing_pixel_scale = False
         self._test_pixel(output, str(pixel))
 
-    @staticmethod
-    def _pixel_channel_label(counts: list[int], mask: int, output: int, pixel: int) -> str:
-        """Canales RGB uno basados, consecutivos entre salidas activas (xLights)."""
+    def _pixel_channel_label(self, controller_index: int, counts: list[int], mask: int, output: int, pixel: int) -> str:
+        """Canales RGB uno basados, consecutivos entre C5 y salidas activas."""
+        with self.state.lock:
+            previous_controllers = [dict(c) for c in self.state.controllers[:controller_index]]
+        pixels_in_previous_controllers = sum(core.active_pixels(c) for c in previous_controllers)
         pixels_before = sum(count for index, count in enumerate(counts[:output]) if mask & (1 << index))
-        first_channel = (pixels_before + pixel - 1) * core.CHANNELS_PER_PIXEL + 1
+        first_channel = (pixels_in_previous_controllers + pixels_before + pixel - 1) * core.CHANNELS_PER_PIXEL + 1
         return f"Píxel {pixel}  (canales {first_channel}–{first_channel + 2})"
 
     def _test_pixel(self, output: int, raw_value: str) -> None:
@@ -461,7 +463,7 @@ class ManagerApp(tk.Tk):
         pixel = max(1, min(count, pixel))
         self.test_pixel_vars[output].set(pixel)
         self.test_pixel_displays[output].set(
-            self._pixel_channel_label(controller["pixels_per_output"], int(controller["active_outputs_mask"]), output, pixel)
+            self._pixel_channel_label(index, controller["pixels_per_output"], int(controller["active_outputs_mask"]), output, pixel)
         )
         self.selected_test_output = output
         self.pixel_test_status.set("LED seleccionado; pulsa INICIAR TEST" if not self.pixel_test_running else "Test activo; LED actualizado")

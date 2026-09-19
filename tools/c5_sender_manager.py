@@ -499,13 +499,35 @@ def build_frame(universes: list[bytearray], start_universe: int, order: str,
     return bytes(frame)
 
 
-def build_controller_frame(universes: list[bytearray], controller_index: int, order: str,
+def build_controller_frame(universes: list[bytearray], start_channel: int, order: str,
                            dmx_data_channels: int, output_counts: list[int], active_mask: int) -> bytes:
+    """Construye un C5 desde su primer canal RGB global (base cero).
+
+    El inicio no depende del número de C5 ni de bloques fijos de universos:
+    es la suma de los LEDs activos configurados en los C5 anteriores.
+    """
     if len(output_counts) != OUTPUTS:
         raise ValueError("El C5 debe tener seis salidas")
     pixels = sum(count for output, count in enumerate(output_counts) if active_mask & (1 << output))
-    return build_frame(universes, controller_index * UNIVERSES_PER_CONTROLLER,
-                       order, dmx_data_channels, pixels)
+    if start_channel < 0:
+        raise ValueError("El canal inicial no puede ser negativo")
+    frame = bytearray(MAX_PIXELS_PER_CONTROLLER * 2)
+    for pixel in range(pixels):
+        channel = start_channel + pixel * CHANNELS_PER_PIXEL
+        values = []
+        for offset in range(CHANNELS_PER_PIXEL):
+            absolute = channel + offset
+            universe, within_universe = divmod(absolute, dmx_data_channels)
+            values.append(universes[universe][within_universe] if universe < len(universes) else 0)
+        struct.pack_into(">H", frame, pixel * 2, rgb555_word(*ordered_rgb(*values, order)))
+    return bytes(frame)
+
+
+def active_pixels(controller: dict[str, Any]) -> int:
+    """Cantidad de LEDs que reserva un C5 en la cadena global de xLights."""
+    counts = controller.get("pixels_per_output", [])
+    mask = int(controller.get("active_outputs_mask", 0))
+    return sum(int(count) for output, count in enumerate(counts) if mask & (1 << output))
 
 
 def load_patch_map(path: str) -> tuple[list[dict[str, Any]], dict[str, list[dict[str, Any]]]]:
@@ -956,6 +978,14 @@ def sender_thread(state: SharedState) -> None:
                 if running:
                     with state.lock:
                         controllers = [dict(c) for c in state.controllers]
+                    # xLights numera los canales de forma continua. Cada C5
+                    # comienza justo después del último LED activo del anterior,
+                    # aunque alguno esté temporalmente offline o deshabilitado.
+                    first_channels: list[int] = []
+                    next_channel = 0
+                    for configured_controller in controllers:
+                        first_channels.append(next_channel)
+                        next_channel += active_pixels(configured_controller) * CHANNELS_PER_PIXEL
                     for index, controller in enumerate(controllers):
                         if not controller.get("enabled") or not controller.get("online"):
                             continue
@@ -966,7 +996,7 @@ def sender_thread(state: SharedState) -> None:
                             frame = build_patch_frame(universes, controller_rows, cfg.order,
                                                       controller["pixels_per_output"])
                         else:
-                            frame = build_controller_frame(universes, index, cfg.order,
+                            frame = build_controller_frame(universes, first_channels[index], cfg.order,
                                                            cfg.dmx_data_channels,
                                                            controller["pixels_per_output"],
                                                            controller["active_outputs_mask"])
